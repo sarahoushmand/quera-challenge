@@ -5,8 +5,7 @@ while test >= 1:
     n, k = input().split()
     n = int(n)
     k = int(k)
-    flag1 = 0
-    flag2 = 0
+    flag = 0
     for i in range(k):
         a, b = input().split()
         dict[int(a)] = int(b)
@@ -14,12 +13,9 @@ while test >= 1:
     sorted_dict_key = list(sorted_dict.keys())
     sorted_dict_value = list(sorted_dict.values())
     for i in range(len(sorted_dict_key) - 1):
-        if abs(sorted_dict_key[i+1] - sorted_dict_key[i]) == 1:
-            flag1 = 1
-    for i in range(len(sorted_dict_value) - 1):
-        if abs(sorted_dict_value[i + 1] - sorted_dict_value[i]) == 1:
-            flag2 = 1
-    if flag1 == 1 and flag2 == 1:
+        if abs(sorted_dict_key[i+1] - sorted_dict_key[i]) == 1 and abs(sorted_dict_value[i + 1] - sorted_dict_value[i]) == 1:
+            flag = 1
+    if flag == 1:
         print('No')
     else:
         print("Yes")
